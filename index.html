@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+<header
+class="fixed top-0 left-0 w-full z-50  bg-white shadow p-[20px] flex  justify-between">
+<div class="flex items-center gap-[30px] ">
+    <div
+        class="w-[35px] h-[35px]   rounded-[10px]  transition duration-300 bg-gradient-to-r from-blue-500 to-purple-600 text-white flex items-center justify-center">
+        <img src="./imges/graduation-cap.png" alt="">
+    </div>
+
+    <h1>EduAdmin</h1>
+    <img class="w-[10px] h-[10px]" src="./imges/greater-than.png" alt="yopish">
+</div>
+ <div class="flex flex  justify-between  gap-[40px]  ">
+    <div>
+        <h1 class="text-[26px] text-center font-medium pr-[700px]">School Management System </h1>
+    </div>
+   
+ </div>
+ <img class="w-[30px] h-[30px] " src="./imges/night-day.png" alt="kun-tun rechmi">
+ 
+</header>
+<div class="">
+<!-- <button id="button" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
+    type="button"
+    class="text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base ms-3 mt-3 text-sm p-2 focus:outline-none inline-flex sm:hidden">
+    <span class="sr-only">Open sidebar</span>
+    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+        viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10" />
+    </svg>
+</button> -->
+
+<aside id="default-sidebar"
+    class="fixed mt-[40px]  top-0 left-0 z-40 w-64 h-full transition-transform -translate-x-full sm:translate-x-0 bg-[white] ">
+    <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-primary-soft border-e border-gray-200 border-default">
+     
+        <ul class="space-y-2 font-medium">
+            <li class="">
+                <a href="#"
+                    class="flex items-center px-2 py-1.5 text-gray-500 pb-[20px] rounded-base  group gap-[20px] mt-[30px] w-[200px] h-[50px]   rounded-[10px]  transition duration-300
+                    hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white ">
+                        <img src="./imges/star (2).png" alt="sazlomlar">
+                                       Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="./packalar/teachers.html"
+                    class="flex items-center px-2 py-1.5 text-gray-500  pb-[20px] rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group gap-[20px] w-[200px] h-[50px]   rounded-[10px]  transition duration-300
+                    hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white">
+                    <img  src="./imges/user_18pt_1x.png" alt="sazlomlar">
+                    Teachers
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="flex items-center px-2 py-1.5 text-gray-500  pb-[20px] rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group gap-[20px] w-[200px] h-[50px]   rounded-[10px]  transition duration-300
+                    hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white">
+                    <img src="./imges/graduation-cap.png" alt="sazlomlar">
+                    Student
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="flex items-center px-2 py-1.5 text-gray-500  pb-[20px] rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group gap-[20px] w-[200px] h-[50px]   rounded-[10px]  transition duration-300
+                    hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white">
+                    <img src="./imges/settings_18pt_1x.png" alt="sazlomlar">
+                    Settings
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+<div class=" sm:ml-64">
+    <div class="p-[20px] bg-gray-100">
+       
+        <div class="gap-[30px] pb-[20px] pt-[100px]">
+            <div class="gap-[30px] pb-[20px] ">
+                <h1 class="text-[30px] text-[bleck]">Dashboard Overview</h1>
+                <p class="text-[16px] text-[bleck]/500">Welcome to your school management dashboard</p> 
+             </div>
+                <div class=" content-center gap-[30px] grid grid-cols-4 pb-[50px]">
+               <div class="border-gray-500  max-w-[250px] h-[100px] rounded-sm p-[10px] flex justify-between  bg-[white] gap-[30px]  rounded-lg cursor-pointer 
+               transform transition duration-300 
+               hover:scale-105 hover:shadow-2xl">
+               <div>
+                <h1>Total Teachers</h1>
+                <p>24</p>
+               </div>
+               <div class="w-[50px] h-[50px] bg-gray-200 rounded-lg flex items-center justify-center "> 
+                <img class="" src="./imges/user_18pt_1x.png" alt="">
+               </div>
+               </div> 
+            <div class="border-gray-500  max-w-[250px] h-[100px] rounded-sm p-[10px] flex justify-between gap-[30px] bg-[white] rounded-lg cursor-pointer 
+            transform transition duration-300 
+            hover:scale-105 hover:shadow-2xl">
+                <div>
+                    <h1>Total Teachers</h1>
+                    <p>80</p>
+                </div>
+                <div class="w-[50px] h-[50px] bg-gray-200 rounded-lg flex items-center justify-center ">
+                    <img class="" src="./imges/graduation-cap.png" alt="">
+                </div>
+            </div>
+            <div class="border-gray-5 max-w-[250px] h-[100px] rounded-sm p-[10px] flex justify-between gap-[30px] bg-[white] rounded-lg cursor-pointer 
+            transform transition duration-300 
+            hover:scale-105 hover:shadow-2xl">
+                <div>
+                    <h1>Avg Student Rating</h1>
+                    <p>4.2</p>
+                </div>
+                <div class="w-[50px] h-[50px] bg-gray-200 rounded-lg flex items-center justify-center ">
+                    <img class="w-20px" src="./imges/star (2).png" alt="">
+                </div>
+            </div>
+            <div class="border-gray-200  max-w-[350px] h-[100px] rounded-sm  p-[10px]  bg-[white] flex justify-between gap-[30px] rounded-lg cursor-pointer 
+            transform transition duration-300 
+            hover:scale-105 hover:shadow-2xl">
+                <div class="">
+                    <h1>Avg Student Rating</h1>
+                    <p>3.6</p>
+                </div>
+
+                    <div class="w-[50px] h-[50px] bg-gray-200 rounded-lg flex items-center justify-center ">
+                        <img class="" src="./imges/growth-chart-invest.png" alt="">
+                        </div>
+           
+             
+            </div>
+     </div>
+     <div class="flex gap-[20px]  mb-[90px]">
+        <div
+            class="border-gray-200  w-[600px] h-[300px] rounded-md p-[10px] justify-between bg-[white]  gap-[30px]  rounded-lg cursor-pointer ">
+            <h1 class="text-[20px] pb-[20px]">Quick Actions</h1>
+            <div class="bg-blue-500 rounded-md flex  gap-[20px] p-[20px] mb-[20px]">
+                <div class="w-[50px] h-[50px] bg-gray-200 rounded-lg flex items-center justify-center ">
+                    <img class="" src="./imges/user_18pt_1x.png" alt="">
+        
+                </div>
+                <div>
+                    <h1 class="text-[16px] text-[white]">Total Teachers</h1>
+                    <p class="text-[16px] text-[white]">View and manage all teachers</p>
+                </div>
+            </div>
+            <div class="bg-purple-500 rounded-md flex  gap-[20px] p-[20px]">
+                <div class="w-[50px] h-[50px] bg-gray-200 rounded-lg flex items-center justify-center ">
+                    <img class="" src="./imges/graduation-cap.png" alt="">
+        
+                </div>
+                <div>
+                    <h1 class="text-[16px] text-[white]">Total Teachers</h1>
+                    <p class="text-[16px] text-[white]">View and manage all teachers</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="border-gray-5  w-[600px] h-[300px] rounded-md p-[10px] justify-between bg-[white]   gap-[10px]  rounded-lg cursor-pointer ">
+            <h1 class="text-[20px] pb-[20px]">Recent Activity</h1>
+            <div class=" rounded-md flex  gap-[20px] pl-[20px] pb-[10px] items-center">
+                <div class="bg-blue-500 rounded-[100%] w-[10px] h-[10px] "></div>
+                <div class="">
+                    <h1 class="text-[16px] ">New teacher added</h1>
+                    <p class="text-[16px] ">2 hours ago</p>
+                </div>
+            </div>
+            <div class=" rounded-md flex  gap-[20px]   items-center pl-[20px] pb-[10px]">
+                <div class="bg-lime-500 rounded-[100%] w-[10px] h-[10px]"></div>
+                <div class="">
+                    <h1 class="text-[16px] ">Student rating updated</h1>
+                    <p class="text-[16px] ">5 hours ago</p>
+                </div>
+            </div>
+            <div class=" rounded-md flex  gap-[20px]   items-center pl-[20px] pb-[10px]">
+                <div class="bg-purple-500 rounded-[100%] w-[10px] h-[10px]"></div>
+                <div class="">
+                    <h1 class="text-[16px] ">New student anrolled</h1>
+                    <p class="text-[16px] ">1 day ago</p>
+                </div>
+            </div>
+        </div>
+     </div>
+   </div>
+    </div>
+</div>
+</div>
+
+   <script src="./js/main.js"></script> 
+</body>
+</html>

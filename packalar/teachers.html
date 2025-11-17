@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header class="fixed top-0 left-0 w-full z-50  bg-white shadow p-[20px] flex  justify-between">
+        <div class="flex items-center gap-[30px] ">
+            <div
+                class="w-[35px] h-[35px]   rounded-[10px]  transition duration-300 bg-gradient-to-r from-blue-500 to-purple-600 text-white flex items-center justify-center">
+                <img src="../imges/graduation-cap.png" alt="">
+            </div>
+    
+            <h1>EduAdmin</h1>
+            <img class="w-[10px] h-[10px]" src="../imges/greater-than.png" alt="yopish">
+        </div>
+        <div class="flex flex  justify-between  gap-[40px]  ">
+            <div>
+                <h1 class="text-[26px] text-center font-medium pr-[700px]">School Management System </h1>
+            </div>
+    
+        </div>
+        <img class="w-[30px] h-[30px] " src="../imges/night-day.png" alt="kun-tun rechmi">
+    
+    </header>
+    <div class="">
+        <!-- <button id="button" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
+        type="button"
+        class="text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base ms-3 mt-3 text-sm p-2 focus:outline-none inline-flex sm:hidden">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+            viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10" />
+        </svg>
+    </button> -->
+    
+        <aside id="default-sidebar"
+            class="fixed mt-[40px]  top-0 left-0 z-40 w-64 h-full transition-transform -translate-x-full sm:translate-x-0 bg-[white] ">
+            <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-primary-soft border-e border-gray-200 border-default">
+    
+                <ul class="space-y-2 font-medium">
+                    <li class="">
+                        <a href="#" class="flex items-center px-2 py-1.5 text-gray-500 pb-[20px] rounded-base  group gap-[20px] mt-[30px] w-[200px] h-[50px]   rounded-[10px]  transition duration-300
+                        hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white ">
+                            <img src="../imges/star (2).png" alt="sazlomlar">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-1.5 text-gray-500  pb-[20px] rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group gap-[20px] w-[200px] h-[50px]   rounded-[10px]  transition duration-300
+                        hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white">
+                            <img src="../imges/user_18pt_1x.png" alt="sazlomlar">
+                            Teachers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-1.5 text-gray-500  pb-[20px] rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group gap-[20px] w-[200px] h-[50px]   rounded-[10px]  transition duration-300
+                        hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white">
+                            <img src="../imges/graduation-cap.png" alt="sazlomlar">
+                            Student
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-1.5 text-gray-500  pb-[20px] rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group gap-[20px] w-[200px] h-[50px]   rounded-[10px]  transition duration-300
+                        hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white">
+                            <img src="../imges/settings_18pt_1x.png" alt="sazlomlar">
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class=" sm:ml-64">
+            <div class="p-[20px] bg-gray-200 pt-[150px]">
+       <div>
+        <div class="flex justify-between">
+            <div>
+                <h1 class="text-[18px] text-[black]">Teachers</h1>
+                <p class="text-[18px] text-[gray]" >SHowing 24 of 24 etachers</p>
+            </div>
+            <div class="flex items-center justify-center   gap-[20px] w-[160px] h-[50px] rounded-[10px]  transition duration-300
+            bg-gradient-to-r from-blue-500 to-purple-600">
+                <img class="w-[30px] h-[30px] " src="../imges/plus-small (2).png" alt="">
+                <h1 class="text-[white] text-[16px]">Add Teacher</h1>
+            </div>
+        </div>
+        <form class="max-w-full mx-auto bg-[white] mt-[30px]">
+            <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                    </svg>
+                </div>
+                <input type="search" id="search"
+                    class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body rounded-[5px]"
+                    placeholder="Search" required />
+                <button type="button"
+                    class="absolute end-1.5 bottom-1.5 text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Search</button>
+            </div>
+        </form>
+        <div class="flex ">
+            <form class="max-w-[400px] mx-auto bg-[white] mt-[20px]">
+                <select id="countries" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium 
+                                border border-default-medium text-heading 
+                                text-sm rounded-base focus:ring-brand focus:border-brand 
+                                shadow-xs placeholder:text-body rounded-[5px]">
+                    <option selected>All Grender</option>
+                    <option value="US">Male</option>
+                    <option value="CA">Female</option>
+                </select>     </form>
+                <form class="max-w-[400px] mx-auto bg-[white] mt-[20px]">
+                    <select id="countries" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium 
+                                        border border-default-medium text-heading 
+                                        text-sm rounded-base focus:ring-brand focus:border-brand 
+                                        shadow-xs placeholder:text-body rounded-[5px]">
+                        <option selected>All Experience</option>
+                        <option value="US">0-5 years</option>
+                        <option value="CA">6-10 years</option>
+                        <option value="CA">11-20 years</option>
+                        <option value="CA">20+ years</option>
+
+                    </select>         </form>
+                    <form class="max-w-[400px] mx-auto bg-[white] mt-[20px]">
+                        <select id="countries" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium 
+                                                border border-default-medium text-heading 
+                                                text-sm rounded-base focus:ring-brand focus:border-brand 
+                                                shadow-xs placeholder:text-body rounded-[5px]">
+                            <option selected>All Rating</option>
+                            <option value="US">4.5+stars</option>
+                            <option value="CA">4.0+stars</option>
+                            <option value="CA">3.5+stars</option>
+                        </select>             </form>
+                        <form class="max-w-[400px] mx-auto bg-[white] mt-[20px]">
+                            <select id="countries" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium 
+                                                        border border-default-medium text-heading 
+                                                        text-sm rounded-base focus:ring-brand focus:border-brand 
+                                                        shadow-xs placeholder:text-body rounded-[5px]">
+                                <option selected>All Profession</option>
+                                <option value="US">Male</option>
+                                <option value="CA">Female</option>
+                            </select>                 </form>
+        </div>
+   
+    <div class="border w-[300px] h-[400px] border flex  justify-center text-center p-[10px] mt-[20px]">
+      <div class="   gap-[30px]">
+   <img class="bg-[red] w-[100px] h-[100px] rounded-[100%]" src="../imges/user_18pt_1x.png" alt="">
+   <h1 class="text-[18px]" >Dallas Turner</h1>
+   <h2 class="text-[14px] rounded-[5px] bg-[gray] w-[80px] h-[24px] text-center">History</h2>
+<div class="flex items-center gap-[20px] pt-[20px]">
+    <div class="flex gap-[5px]">
+        <img class="w-[20px] h-[20px]" src="../imges/briefcase.png" alt="somalar">
+        <p class="text-[16px]">33y</p>
+    </div>
+    <div class="flex gap-[5px]">
+        <img class="w-[20px] h-[20px]" src="../imges/user_18pt_1x.png" alt="somalar">
+        <p class="text-[16px]">33y</p>
+    </div>
+</div>
+      </div>
+      
+   
+   </div>
+          
+       </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

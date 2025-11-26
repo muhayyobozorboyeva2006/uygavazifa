@@ -2,13 +2,24 @@ let card = document.getElementById("cards")
 let form = document.getElementById("form")
 let outermodel = document.getElementById("outer-model")
 let cardbtn = document.getElementById("cardbtn")
+let selected = null;
+let pagination = document.getElementById("pagination")
+let page = 1
 
 cardbtn.addEventListener("click" , function(){
     outermodel.classList.remove("hidden")
+for(let el of form){
+    if(el.type === "checkbox"){
+        el.checked = false
+    } else{
+        el.value = "";
+
+    }}
 })
 
 outermodel.addEventListener("click", function () {
-    cardbtn.classList.add("hidden")
+    outermodel.classList.add("hidden")
+    selected = null;
 
 })
 
@@ -16,19 +27,39 @@ form.addEventListener("click" , function(e){
     e.stopPropagation()
 })
 
-async function getData() {
+async function getData(page) {
    try{
-       let res = await axios.get("https://69242f5d3ad095fb84730f49.mockapi.io/teachers")
+       let res = await axios.get(`https://69242f5d3ad095fb84730f49.mockapi.io/teachers?page=${page}&limit=10`)
+       let allres = await axios.get("https://69242f5d3ad095fb84730f49.mockapi.io/teachers")
+
+       let pagea = Math.ceil(allres.data.length / 10)
+       console.log(pagea);
+       pagination.innerHTML = ""
+
+       pagination.innerHTML += `
+       <li  onClick = "changePage(${page - 1})"
+                class="${page === 1 ? "hidden" : ""} flex items-center justify-center text-body  box-border rounded-[10px] rounded-[10px]   p-[5px] bg-gradient-to-r from-blue-500 to-purple-600 p-[10px]  text-[white]">Previous
+        </li>
+       `
+       pagination.innerHTML += ` <h1> ${page}/${pagea}</h1>`
+
+
+       pagination.innerHTML += `
+                       <li onClick = "changePage(${page + 1})"
+                        class="${page === pagea ? "hidden" : ""}  flex items-center justify-center text-body  box-border rounded-[10px]  bg-gradient-to-r from-blue-500 to-purple-600 p-[10px]  text-[white]">Next  </li>
+       `
+ 
        console.log(res.data);
+       card.innerHTML = ""
        res.data.map((el) => {
         card.innerHTML += `
          <div
                         class="text-card-foreground flex flex-col gap-6 rounded-xl border p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white  border-gray-200 border-gray-200 group">
                         <div class="flex flex-col items-center text-center mb-4">
-                         <span data-slot="avatar"
-                                class="relative flex size-10 shrink-0 overflow-hidden rounded-full h-20 w-20 mb-3 ring-4 ring-blue-100 dark:ring-blue-900">
-                                <img  class="aspect-square size-full" alt="Glenda Marvin-Corwin"
-                                    src="${el.avatar}"></span>
+                         <a href="../packalar/teachers-students.html?teacherId=${el.id}"
+                                class="relative flex size-10  overflow-hidden rounded-full h-20 w-20 mb-3  ring-blue-100 ">
+                                <img  class="aspect-square size-full"  src="${el.avatar}" alt="sizni rasmgiz" > 
+                              </a>
                             <h3 class="text-[15px] text-black mb-1">${el.name}</h3>
                             <h1 class="items-center justify-center rounded-md border border-gray-200 px-2 py-0.5 text-xs bg-gray-300 mb-[10px]">Art</h1>
                             <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-3"><span
@@ -38,7 +69,8 @@ async function getData() {
                                         class="lucide lucide-briefcase h-4 w-4" aria-hidden="true">
                                         <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                                         <rect width="20" height="14" x="2" y="6" rx="2"></rect>
-                                    </svg>${el.experience }y</span><span class="flex items-center gap-1"><svg
+                                    </svg>${el.experience }y</span>
+                                    <span class="flex items-center gap-1"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" class="lucide lucide-users h-4 w-4" aria-hidden="true">
@@ -46,7 +78,8 @@ async function getData() {
                                         <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
                                         <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                                         <circle cx="9" cy="7" r="4"></circle>
-                                    </svg>${el.age}y</span></div>
+                                    </svg>${el.age}y</span>
+                                    </div>
                             <div class="flex items-center gap-1 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -65,7 +98,9 @@ async function getData() {
                                     <path
                                         d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
                                     </path>
-                                </svg><span class="truncate">${el.createdAt}</span></div>
+                                </svg>
+                                <p class="truncate">${el.createdAt}</p>
+                                </div>
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -73,7 +108,9 @@ async function getData() {
                                     aria-hidden="true">
                                     <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
                                     <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                                </svg><span class="truncate">${el.gmail }</span></div>
+                                </svg>
+                                <p class="truncate">${el.gmail}</p>
+                                </div>
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -84,7 +121,7 @@ async function getData() {
                                     </path>
                                     <path d="m21.854 2.147-10.94 10.939"></path>
                                 </svg>
-                                <h1 class="truncate">@${el.username}</h1>
+                                <h1 class="truncate">@${el.user}</h1>
                             </div>
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -97,27 +134,25 @@ async function getData() {
                                     <rect width="4" height="12" x="2" y="9"></rect>
                                     <circle cx="4" cy="4" r="2"></circle>
                                 </svg>
-                                <h1 class="truncate">linkedin.com/in/glenda-marvin-corwin</h1>
+                                <h1 class="truncate">${el.linkedin}</h1>
                             </div>
                         </div>
 
                         <div class=" flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity  duration-200">
-                            <button
-                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium  transition-all disabled:pointer-events-none
-                                 disabled:opacity-50  outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive
-                                  border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input
-                                 dark:hover:bg-input/50 h-8 rounded-md px-3 has-[&gt;svg]:px-2.5 flex-1 gap-2"><svg
+                            <button onClick = "editTacher(${el.id})"
+                                class="inline-flex items-center justify-center  text-sm font-medium  transition-all 
+                                  border bg-background text-foreground  h-8 rounded-md px-3  flex-1 gap-2"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="lucide lucide-pencil h-4 w-4" aria-hidden="true">
                                     <path
                                         d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z">
                                     </path>
-                                    <path d="m15 5 4 4"></path>
-                                </svg>Edit</button>
-                                <button data-slot="button"
-                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50  outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]
-                                 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background dark:bg-input/30 dark:border-input h-8 rounded-md px-3  flex-1 gap-2 text-red-600 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-950"><svg
+                                    <path d="m15 5 4 4"></path></svg>
+                                Edit</button>
+                                <button onClick = "deleteTacher(${el.id})"
+                                class="inline-flex items-center justify-center  text-sm font-medium transition-all
+                                 border bg-background  h-8 rounded-md px-3  flex-1 gap-2 text-red-600 "><svg
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="lucide lucide-trash2 lucide-trash-2 h-4 w-4"
@@ -137,31 +172,85 @@ async function getData() {
     
    } 
 }
-getData();
+getData(page);
+ function changePage(i){
+     getData(i);
+
+ }
+
+
+async function editTacher(id) {
+    outermodel.classList.remove("hidden")
+    selected = id;
+    try {
+        let res = await axios.get(`https://69242f5d3ad095fb84730f49.mockapi.io/teachers/${id}`)
+        console.log(res.data);
+        form[0].value = res.data.name
+        form[1].value = res.data.createdAt
+        form[2].value = res.data.avatar
+        form[3].value = res.data.age
+        form[4].value = res.data.experience
+        form[5].value = res.data.profession
+        form[6].value = res.data.rating
+        form[7].value = res.data.gmail
+        form[8].value = res.data.user
+        form[9].value = res.data.phone
+        form[10].value = res.data.linkedin
+        form[11].checked = res.data.gender
+    
+   
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 
 async function addTeacher(teachersobj) {
     try{
-        await axios.post("https://69242f5d3ad095fb84730f49.mockapi.io/teachers", teachersobj, outermodel.classList.add("hidden"))
-        getData();
+        if(selected){
+            await axios.put(`https://69242f5d3ad095fb84730f49.mockapi.io/teachers/${selected}`, teachersobj)
+
+
+        }else{
+            await axios.post("https://69242f5d3ad095fb84730f49.mockapi.io/teachers", teachersobj )
+
+        }
+         outermodel.classList.add("hidden")
+         selected = null;
+        getData(page);
     }catch(err){
         console.log(err);
         
     }
 }
 
+
 form.addEventListener("submit" , function(e){
     e.preventDefault();
     let teachersobj = {};
     teachersobj.name = form[0].value;
-    teachersobj.age = form[1].value;
-    teachersobj.experience = form[2].value;
-    teachersobj.avatar = form[3].value;
-    teachersobj.profession = form[4].value;
-    teachersobj.linkedin = form[5].value;
-    teachersobj.rating = form[6].value;
-    teachersobj.gender = form[7].checked;
+    teachersobj.createdAt = form[1].value;
+    teachersobj.avatar = form[2].value;
+    teachersobj.age = form[3].value;
+    teachersobj.experience = form[4].value;
+    teachersobj.profession = form[5].value;
+    teachersobj.linkedin = form[6].value;
+    teachersobj.rating = form[7].value;
+    teachersobj.gmail = form[8].value;
+    teachersobj.user = form[9].value;
+    teachersobj.phone = form[10].value;
+    teachersobj.gender = form[11].checked;
 
     console.log(teachersobj);
-    addTeacher()
+    addTeacher(teachersobj)
+    selected = null;
 
 })
+async function deleteTacher(id){
+    try{
+        await axios.delete(`https://69242f5d3ad095fb84730f49.mockapi.io/teachers/${id}`)
+        getData(page)
+    }catch(err){
+        console.log(err);
+    }
+}

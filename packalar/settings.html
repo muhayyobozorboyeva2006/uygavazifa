@@ -23,7 +23,8 @@
                             <path d="M22 10v6"></path>
                             <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
                         </svg>
-                    </div><span class="text-black">EduAdmin</span>
+                    </div>
+                    <h1 class="text-black">EduAdmin</h1>
                 </div>
                 <a href="" class="inline-flex items-center justify-center gap-2
                          whitespace-nowrap text-sm font-medium transition-all  outline-none 
@@ -45,7 +46,8 @@
                         <rect width="7" height="5" x="14" y="3" rx="1"></rect>
                         <rect width="7" height="9" x="14" y="12" rx="1"></rect>
                         <rect width="7" height="5" x="3" y="16" rx="1"></rect>
-                    </svg><span>Dashboard</span>
+                    </svg>
+                    <h1>Dashboard</h1>
                 </a>
                 <a href="./teachers.html"
                     class="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 
@@ -57,7 +59,9 @@
                         <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
                         <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                         <circle cx="9" cy="7" r="4"></circle>
-                    </svg><span>Teachers</span></a>
+                    </svg>
+                    <h1>Teachers</h1>
+                </a>
                 <a href="./students.html"
                     class="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200
                             hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white hover:shadow-lg shadow-blue-500/50"><svg
@@ -69,7 +73,9 @@
                         </path>
                         <path d="M22 10v6"></path>
                         <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
-                    </svg><span>Students</span></a>
+                    </svg>
+                    <h1>Students</h1>
+                </a>
                 <a href="./settings.html"
                     class="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 
                             hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white hover:shadow-lg shadow-blue-500/50 "><svg
@@ -80,7 +86,9 @@
                             d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915">
                         </path>
                         <circle cx="12" cy="12" r="3"></circle>
-                    </svg><span>Settings</span></a>
+                    </svg>
+                    <h1>Settings</h1>
+                </a>
             </nav>
         </aside>
         <div class="flex-1 transition-all duration-300 ml-64 bg-gray-50">
@@ -89,8 +97,12 @@
                     class="bg-white  border-b border-gray-200  px-8 py-4 flex items-center justify-between sticky top-0 z-10 transition-colors duration-300">
                     <div class="flex items-center gap-4">
                         <h1 class="text-black">School Management System</h1>
-                    </div><button data-slot="button"
-                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9 rounded-full"><svg
+                    </div>
+                    <button data-slot="button"
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all 
+                        disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none 
+                        focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background 
+                        text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9 rounded-full"><svg
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-moon h-5 w-5" aria-hidden="true">
@@ -115,97 +127,111 @@
                                     </p>
                                 </div>
                                 <div  class="px-6  space-y-4">
+                                    <div class="space-y-2">
+                                        <label 
+                    class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+                                            for="name">Name</label><input 
+                 class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none  bg-white "
+                                            id="name" placeholder="Your name"></div>
                                     <div class="space-y-2"><label 
                                             class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
-                                            for="name">Name</label><input data-slot="input"
-                                            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]   aria-invalid:border-destructive bg-white "
-                                            id="name" placeholder="Your name"></div>
-                                    <div class="space-y-2"><label data-slot="label"
-                                            class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
-                                            for="email">Email</label><input type="email" data-slot="input"
-                                            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent  aria-invalid:border-destructive bg-white "
+                                            for="email">Email</label><input type="email" 
+                 class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none  bg-white "
                                             id="email" placeholder="your.email@example.com"></div>
                                             <button 
-                                        class="items-center justify-center gap-2  rounded-md text-sm  transition-all    bg-black-500  w-[200px] h-[20px]  px-4 py-2 ">Save
-                                        Changes</button>
+                                        class="items-center justify-center gap-2  rounded-md text-sm  transition-all  text-[white]  bg-[black] w-[200px] h-[40px]  px-4 py-2 mb-[20px] ">
+                                        Save Changes</button>
                                 </div>
                             </div>
-                            <!-- <div data-slot="card"
-                                class="text-card-foreground flex flex-col gap-6 rounded-xl border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                                <div data-slot="card-header"
-                                    class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
-                                    <h4 data-slot="card-title" class="leading-none text-gray-900 dark:text-white">Notifications</h4>
-                                    <p data-slot="card-description" class="text-muted-foreground">Manage your notification
-                                        preferences</p>
+                            <div 
+                                class="text-card-foreground flex flex-col gap-6 rounded-xl border bg-white  border-gray-200 ">
+                                <div 
+                                    class=" grid auto-rows-min  items-start gap-1.5 px-6 pt-6 ">
+                                    <h4  class="leading-none text-gray-900 ">Notifications</h4>
+                                    <p  class="text-gray-500">Manage your notification preferences</p>
                                 </div>
-                                <div data-slot="card-content" class="px-6 [&amp;:last-child]:pb-6 space-y-4">
+                                <div  class="px-6  space-y-4">
                                     <div class="flex items-center justify-between">
                                         <div>
-                                            <p class="text-gray-900 dark:text-white">Email Notifications</p>
-                                            <p class="text-sm text-gray-600 dark:text-gray-400">Receive email updates about your
-                                                account</p>
-                                        </div><button type="button" role="switch" aria-checked="false" data-state="unchecked"
-                                            value="on" data-slot="switch"
-                                            class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-switch-background focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"><span
-                                                data-state="unchecked" data-slot="switch-thumb"
-                                                class="bg-card dark:data-[state=unchecked]:bg-card-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span></button>
+                                            <p class="text-black-200 ">Email Notifications</p>
+                                            <p class="text-sm text-gray-500 ">Receive email updates about your account</p>
+                                        </div>
+                                        <label class="inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" class="sr-only peer" checked>
+                                            <div
+                                                class="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4   rounded-full peer peer-checked:after:translate-x-full 
+                                                rtl:peer-checked:after:-translate-x-full peer-checked:after:border-gray-200 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all 
+                                                peer-checked:bg-black">
+                                            </div>
+                                        </label>
+  
+                                       
                                     </div>
                                     <div class="flex items-center justify-between">
                                         <div>
-                                            <p class="text-gray-900 dark:text-white">Push Notifications</p>
-                                            <p class="text-sm text-gray-600 dark:text-gray-400">Receive push notifications on your
+                                            <p class="text-gray-900">Push Notifications</p>
+                                            <p class="text-sm text-gray-500 ">Receive push notifications on your
                                                 devices</p>
-                                        </div><button type="button" role="switch" aria-checked="false" data-state="unchecked"
-                                            value="on" data-slot="switch"
-                                            class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-switch-background focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"><span
-                                                data-state="unchecked" data-slot="switch-thumb"
-                                                class="bg-card dark:data-[state=unchecked]:bg-card-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span></button>
+                                        </div>
+                                        <label class="inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" class="sr-only peer" checked>
+                                            <div class="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4   rounded-full peer peer-checked:after:translate-x-full 
+                                                                                        rtl:peer-checked:after:-translate-x-full peer-checked:after:border-gray-200 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all 
+                                                                                        peer-checked:bg-black">
+                                            </div>
+                                        </label>
                                     </div>
-                                    <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-between mb-[20px]">
                                         <div>
-                                            <p class="text-gray-900 dark:text-white">Weekly Reports</p>
-                                            <p class="text-sm text-gray-600 dark:text-gray-400">Get weekly reports about school
-                                                activities</p>
-                                        </div><button type="button" role="switch" aria-checked="true" data-state="checked"
-                                            value="on" data-slot="switch"
-                                            class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-switch-background focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"><span
-                                                data-state="checked" data-slot="switch-thumb"
-                                                class="bg-card dark:data-[state=unchecked]:bg-card-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span></button>
+                                            <p class="text-gray-900 ">Weekly Reports</p>
+                                            <p class="text-sm text-gray-500 ">Get weekly reports about school activities</p>
+                                        </div>
+                                        <label class="inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" class="sr-only peer" checked>
+                                            <div class="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4   rounded-full peer peer-checked:after:translate-x-full 
+                                                                                        rtl:peer-checked:after:-translate-x-full peer-checked:after:border-gray-200 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all 
+                                                                                        peer-checked:bg-black">
+                                            </div>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <div data-slot="card"
-                                class="text-card-foreground flex flex-col gap-6 rounded-xl border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                                <div data-slot="card-header"
-                                    class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
-                                    <h4 data-slot="card-title" class="leading-none text-gray-900 dark:text-white">Privacy</h4>
-                                    <p data-slot="card-description" class="text-muted-foreground">Manage your privacy settings</p>
+                            <div 
+                                class="flex flex-col gap-6 rounded-xl border bg-white  border-gray-200 ">
+                                <div 
+                                    class="grid auto-rows-min items-start gap-1.5 px-6 pt-6 ">
+                                    <h4  class="leading-none text-gray-900 ">Privacy</h4>
+                                    <p  class="text-gray-500">Manage your privacy settings</p>
                                 </div>
-                                <div data-slot="card-content" class="px-6 [&amp;:last-child]:pb-6 space-y-4">
+                                <div  class="px-6 ">
                                     <div class="flex items-center justify-between">
                                         <div>
-                                            <p class="text-gray-900 dark:text-white">Public Profile</p>
-                                            <p class="text-sm text-gray-600 dark:text-gray-400">Make your profile visible to others
-                                            </p>
-                                        </div><button type="button" role="switch" aria-checked="true" data-state="checked"
-                                            value="on" data-slot="switch"
-                                            class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-switch-background focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"><span
-                                                data-state="checked" data-slot="switch-thumb"
-                                                class="bg-card dark:data-[state=unchecked]:bg-card-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span></button>
+                                            <p class="text-gray-900 ">Public Profile</p>
+                                            <p class="text-sm text-gray-500 ">Make your profile visible to others </p>
+                                        </div>
+                                        <label class="inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" class="sr-only peer" checked>
+                                            <div class="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4   rounded-full peer peer-checked:after:translate-x-full 
+                                                                                        rtl:peer-checked:after:-translate-x-full peer-checked:after:border-gray-200 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all 
+                                                                                        peer-checked:bg-black">
+                                            </div>
+                                        </label>
                                     </div>
-                                    <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-between mb-[20px]">
                                         <div>
-                                            <p class="text-gray-900 dark:text-white">Show Activity Status</p>
-                                            <p class="text-sm text-gray-600 dark:text-gray-400">Let others see when you're online
-                                            </p>
-                                        </div><button type="button" role="switch" aria-checked="false" data-state="unchecked"
-                                            value="on" data-slot="switch"
-                                            class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-switch-background focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"><span
-                                                data-state="unchecked" data-slot="switch-thumb"
-                                                class="bg-card dark:data-[state=unchecked]:bg-card-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span></button>
+                                            <p class="text-gray-900 ">Show Activity Status</p>
+                                            <p class="text-sm text-gray-500 ">Let others see when you're online </p>
+                                        </div>
+                                        <label class="inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" class="sr-only peer" checked>
+                                            <div class="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4   rounded-full peer peer-checked:after:translate-x-full 
+                                                                                        rtl:peer-checked:after:-translate-x-full peer-checked:after:border-gray-200 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all 
+                                                                                        peer-checked:bg-black">
+                                            </div>
+                                        </label>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </main>

@@ -92,9 +92,11 @@
             <div class="flex items-center gap-4">
                 <h1 class=" text-black">School Management System</h1>
             </div>
-            <button data-slot="button"
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all  dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9 rounded-full"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            <button 
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all  
+                dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input 
+                dark:hover:bg-input/50 size-9 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-moon h-5 w-5" aria-hidden="true">
                     <path
@@ -117,7 +119,8 @@
                             class="lucide lucide-plus h-5 w-5" aria-hidden="true">
                             <path d="M5 12h14"></path>
                             <path d="M12 5v14"></path>
-                        </svg>Add Teacher</button>
+                        </svg>
+                        Add Teacher</button>
                 </div>
                 <div class="mb-6 space-y-4">
                     <div class="relative">
@@ -129,8 +132,8 @@
                             <path d="m21 21-4.34-4.34"></path>
                             <circle cx="11" cy="11" r="8"></circle>
                         </svg>
-                        <input type="text" 
-                            class=" flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none 
+                        <input id="search" type="text" 
+                            class=" flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base  outline-none 
                                pl-10 bg-white  border-gray-200 "
                             placeholder="Search teachers by name, email, or profession..." >
                         </div>
@@ -143,6 +146,14 @@
                             <option value="CA">Female</option>
                         </select>
                     </form>
+                    <form class="max-w-sm mx-auto ">
+                    <select id="sortName"
+                        class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-gray-200 text-heading text-sm rounded-base focus:ring-brand shadow-xs placeholder:text-body rounded-[10px] bg-white">
+                        <option selected value="default">Default</option>
+                        <option value="asc">A-Z</option>
+                        <option value="desc">Z-A</option>
+                    </select>
+                </form>
                     <form class="max-w-sm mx-auto p-[10px]">
                         <select id="countries"
                             class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-gray-200 text-heading text-sm rounded-base focus:ring-brand shadow-xs placeholder:text-body rounded-[10px] bg-white">
@@ -163,17 +174,13 @@
 
                         </select>
                     </form>
-                    <form class="max-w-sm mx-auto  ">
-                        <select id="countries"
-                            class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-gray-200 text-heading text-sm rounded-base focus:ring-brand shadow-xs placeholder:text-body rounded-[10px] bg-white">
+                  <div class="max-w-sm mx-auto">
+                        <select id="profession" 
+                            class="block w-full px-3 py-2.5     bg-neutral-secondary-medium border border-gray-200 text-heading text-sm rounded-base focus:ring-brand shadow-xs placeholder:text-body rounded-[10px] bg-white">
                             <option selected>All Profession</option>
-                            <option value="male">All</option>
-                            <option value="CA">Biology</option>
-                            <option value="CA">English Literature</option>
-                            <option value="CA">Geography</option>
-                            <option value="CA">Computer Science</option>
+
                         </select>
-                    </form>
+            </div>
                         </div>
                 </div>
                 <div id="cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
@@ -182,43 +189,70 @@
                
                 </div>
             </div>
-<div>
-    <ul id="pagination" class="flex -space-x-px text-sm mt-[20px] gap-[5px]">
-        
-       
-       
-
-    </ul>  </div>
+            <div>
+                <ul id="pagination" class="flex -space-x-px text-sm mt-[20px] gap-[5px]">
+            
+            
+            
+            
+                </ul>
+            </div>
 
         </main>
     </div>
     </div>
    
-    <div id="outer-model" class="fixed hidden top-0 z-20 left-0 w-full h-full bg-black/80 flex items-center justify-center ">
-      <form id="form" class="max-w-[700px] w-full p-[20px] rounded-[40px] bg-white grid grid-cols-2 gap-[20px] hover:border-red-500 hover:shadow-xl hover:shadow-blue-600" action="">
-        <input required    class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600" type="text" placeholder="  FullName">
-        <input required    class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600" type="text" placeholder=" CreatedAt">
-        <input required    class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600" type="text" placeholder="Avatar">
-        <input required    class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600" type="number" placeholder="Age">
-        <input required    class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600" type="text" placeholder="Experience">
-        <input required    class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600" type="text" placeholder="Profession">
-        <input required  class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600" type="text" placeholder="Rating">
-        <input required  class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600" type="text" placeholder="Gmail">
-        <input required class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600" type="text" placeholder="Username">
-       <input required    class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600" type="text" placeholder="Phone">
-    <input required class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"   type="text" placeholder="Linkedin">
+<div id="outer-model"
+    class="fixed hidden top-0 z-20 left-0 w-full h-full bg-black/80 flex items-center justify-center ">
+    <form id="form"
+        class="max-w-[700px] w-full p-[20px] rounded-[40px] bg-white grid grid-cols-2 gap-[20px] hover:border-red-500 hover:shadow-xl hover:shadow-blue-600"
+        action="">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="text" placeholder="  FullName">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="text" placeholder=" CreatedAt">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="text" placeholder="Avatar">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="number" placeholder="Age">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="text" placeholder="Experience">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="text" placeholder="Profession">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="text" placeholder="Rating">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="text" placeholder="Gmail">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="text" placeholder="Username">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="text" placeholder="Phone">
+        <input required
+            class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none hover:border-blue-500 hover:shadow-xl hover:shadow-blue-600"
+            type="text" placeholder="Linkedin">
 
         <div id="bender">
-            <input  required     class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none" type="checkbox" placeholder="Rating">
-     <label for="genger">Male?</label>
+            <input required class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none" type="checkbox"
+                placeholder="Rating">
+            <label for="genger">Male?</label>
         </div>
         <div class="w-full ">
             <button
                 class="border-1 rounded-[5px] py-[2px] px-[10px] outline-none bg-[orangered] border-[orangered] text-white hover:bg-[blue] hover:border-blue-500 cursor-pointer ">Submit</button>
         </div>
-     
-      </form>
-    </div>
+
+    </form>
+</div>
    
     <script src="../js/main.js"></script>
 </body>

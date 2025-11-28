@@ -5,6 +5,30 @@ let cardbtn = document.getElementById("cardbtn")
 let selected = null;
 let pagination = document.getElementById("pagination")
 let page = 1
+let sortName = document.getElementById("sortName")
+let sortNamevalue = "default"
+let search = document.getElementById("search")
+let searchvalue = ""
+let profession = document.getElementById("profession")
+let professionvalue = "all"
+
+search.addEventListener("input" , function(e){
+    searchvalue = e.target.value;
+    getData(page, sortNamevalue , searchvalue , professionvalue );
+
+})
+
+profession.addEventListener("click" , function(e){
+    professionvalue = e.target.value    
+    getData(page, sortNamevalue, searchvalue, professionvalue);
+
+
+} )
+
+sortName.addEventListener("click" , function(e){
+    sortNamevalue = e.target.value
+    getData(page, sortNamevalue, searchvalue, professionvalue) ;
+})
 
 cardbtn.addEventListener("click" , function(){
     outermodel.classList.remove("hidden")
@@ -27,10 +51,19 @@ form.addEventListener("click" , function(e){
     e.stopPropagation()
 })
 
-async function getData(page) {
+async function getData(page, sortNamevalue, searchvalue, professionvalue ) {
    try{
-       let res = await axios.get(`https://69242f5d3ad095fb84730f49.mockapi.io/teachers?page=${page}&limit=10`)
+       let res = await axios.get(`https://69242f5d3ad095fb84730f49.mockapi.io/teachers?page=${page}&limit=10&${sortNamevalue === "default" ? "" : `&sortBy=name&order=${sortNamevalue}`}${searchvalue ? `&name=${searchvalue}` : ""}${professionvalue === "all" ? "" : `&filter=${professionvalue}`}`
+        )
        let allres = await axios.get("https://69242f5d3ad095fb84730f49.mockapi.io/teachers")
+    let allrestechers = allres.data
+    let allprofession = allrestechers.map((el) => el.profession)
+    let professions = [...new Set(allprofession)]
+      professions.map((el) => {
+        profession.innerHTML += `
+         <option value="${el}">${el}</option>
+        `
+      })
 
        let pagea = Math.ceil(allres.data.length / 10)
        console.log(pagea);
@@ -61,7 +94,7 @@ async function getData(page) {
                                 <img  class="aspect-square size-full"  src="${el.avatar}" alt="sizni rasmgiz" > 
                               </a>
                             <h3 class="text-[15px] text-black mb-1">${el.name}</h3>
-                            <h1 class="items-center justify-center rounded-md border border-gray-200 px-2 py-0.5 text-xs bg-gray-300 mb-[10px]">Art</h1>
+                            <h1 class="items-center justify-center rounded-md border border-gray-200 px-2 py-0.5 text-xs bg-gray-300 mb-[10px]">${el.profession}</h1>
                             <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-3"><span
                                     class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -172,9 +205,9 @@ async function getData(page) {
     
    } 
 }
-getData(page);
+getData(page, sortNamevalue, searchvalue, professionvalue);
  function changePage(i){
-     getData(i);
+     getData(i, sortNamevalue, searchvalue, professionvalue);
 
  }
 
@@ -217,7 +250,7 @@ async function addTeacher(teachersobj) {
         }
          outermodel.classList.add("hidden")
          selected = null;
-        getData(page);
+        getData(page, sortNamevalue, searchvalue, professionvalue);
     }catch(err){
         console.log(err);
         
@@ -249,7 +282,7 @@ form.addEventListener("submit" , function(e){
 async function deleteTacher(id){
     try{
         await axios.delete(`https://69242f5d3ad095fb84730f49.mockapi.io/teachers/${id}`)
-        getData(page)
+        getData(page, sortNamevalue, searchvalue, professionvalue)
     }catch(err){
         console.log(err);
     }

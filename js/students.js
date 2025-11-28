@@ -59,6 +59,11 @@ try{
     let allrestechers = allres.data
     let allprofession = allrestechers.map((el) => el.profession)
     let professions = [...new Set(allprofession)]
+    console.log(allrestechers);
+    console.log(allprofession);
+    
+    
+    
     professions.map((el) => {
         profession.innerHTML += `
      <option value="${el}">${el}</option>
@@ -93,7 +98,7 @@ try{
                                 <div class="flex items-center gap-2 mb-3">
                                     <h1
                                         class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 ">
-                                        Grade 5</h1>
+                                        ${el.profession}</h1>
                                     <h1 class="text-black">19y</h1>
                                 </div>
                                 <div class="w-full space-y-2 mb-3">

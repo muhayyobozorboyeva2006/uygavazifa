@@ -1,8 +1,11 @@
 let path = new URLSearchParams(location.search)
 let id = path.get("teacherId")
 let cards2 = document.getElementById("cards2")
+let postdom = document.getElementById("posts")
+let aldumsdom = document.getElementById("alboms")
+let postscontents = document.getElementById("posts-contents")
+let albomscontens = document.getElementById("alboms-contens")
 
-console.log(id);
 
 async function getData() {
     try {
@@ -75,3 +78,11 @@ async function getData() {
     }
         }
         getData()
+aldumsdom.addEventListener("click", function () {
+    postscontents.classList.add("hidden")
+    albomscontens.classList.remove("hidden")
+})
+postdom.addEventListener("click", function () {
+    albomscontens.classList.add("hidden")
+    postscontents.classList.remove("hidden")
+        })

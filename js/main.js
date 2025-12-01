@@ -67,6 +67,8 @@ async function getData(page, sortNamevalue, searchvalue, professionvalue ) {
 
        let pagea = Math.ceil(allres.data.length / 10)
        console.log(pagea);
+       
+       
        pagination.innerHTML = ""
 
        pagination.innerHTML += `

@@ -3,7 +3,7 @@ let form = document.getElementById("form")
 let outermodel = document.getElementById("outer-model")
 let cardbtn = document.getElementById("cardbtn")
 let selected = null;
-let pagination = document.getElementById("pagination")
+let paginationlar = document.getElementById("pagination")
 let page = 1
 let sortName = document.getElementById("sortName")
 let sortNamevalue = "default"
@@ -72,22 +72,25 @@ try{
 
     let pagea = Math.ceil(allres.data.length / 10)
     console.log(pagea);
-    pagination.innerHTML = ""
 
-    pagination.innerHTML += `
+    paginationlar.innerHTML = ""
+
+    paginationlar.innerHTML += `
    <li  onClick = "changePage(${page - 1})"
             class="${page === 1 ? "hidden" : ""} flex items-center justify-center text-body  box-border rounded-[10px] rounded-[10px]   p-[5px] bg-gradient-to-r from-blue-500 to-purple-600 p-[10px]  text-[white]">Previous
     </li>
    `
-    pagination.innerHTML += ` <h1> ${page}/${pagea}</h1>`
+    paginationlar.innerHTML += ` <h1> ${page}/${pagea}</h1>`
 
 
-    pagination.innerHTML += `
+    paginationlar.innerHTML += `
                    <li onClick = "changePage(${page + 1})"
                     class="${page === pagea ? "hidden" : ""}  flex items-center justify-center text-body  box-border rounded-[10px]  bg-gradient-to-r from-blue-500 to-purple-600 p-[10px]  text-[white]">Next  </li>
    `
     console.log(reslar.data);
+    cardslar.innerHTML = ""
     reslar.data.map((el) => {
+       
         cardslar.innerHTML += `
          <div class="text-card-foreground flex flex-col gap-6 rounded-xl border p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white  border-gray-200  group">
                             <div class="flex flex-col items-center text-center mb-4">
